@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Injection</title>
+    <style>
+      /* Общие стили */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      header {
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      main {
+        flex-grow: 1;
+        padding: 20px;
+        width: 100%;
+        max-width: 800px;
+        text-align: justify;
+        line-height: 1.8;
+      }
+
+      a {
+        width: 200px;
+        display: block;
+        margin: 20px auto;
+        text-decoration: none;
+        color: #2575fc;
+        font-weight: bold;
+        border: 2px solid #2575fc;
+        padding: 10px;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 5px;
+      }
+
+      a:hover {
+        color: white;
+        background-color: #2575fc;
+      }
+
+      ul {
+        list-style: disc;
+        margin: 20px auto;
+        padding-left: 20px;
+        line-height: 1.8;
+        text-align: left;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      img {
+        max-width: 100%;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        background-color: #f0f0f0;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        color: #777;
+        font-size: 14px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        main {
+          padding: 10px;
+        }
+
+        a {
+          width: 100%;
+        }
+
+        ul {
+          padding-left: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Что такое Command Injection?</h1>
+    </header>
+    <main>
+      <a href="index.html">Назад</a>
+      <section>
+        <h2>Определение</h2>
+        <p>
+          Command Injection - это уязвимость в веб-приложениях, которая позволяет
+          злоумышленникам выполнять произвольные команды на сервере, что может
+          привести к компрометации системы и утечке данных.
+        </p>
+      </section>
+      <section>
+        <h2>Типы Command Injection</h2>
+        <ul>
+          <li>
+            <strong>In-band Command Injection:</strong> Злоумышленник получает
+            результаты выполнения команд через тот же канал, который использует
+            для атаки.
+          </li>
+          <li>
+            <strong>Blind Command Injection:</strong> Злоумышленник не получает
+            результаты напрямую, но может делать выводы о системе через
+            различные команды.
+          </li>
+          <li>
+            <strong>Time-based Command Injection:</strong> Злоумышленник
+            использует задержки для получения информации о системе.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Защита от Command Injection</h2>
+        <p>
+          Чтобы защититься от Command Injection, разработчики должны:
+        </p>
+        <ul>
+          <li>Использовать безопасные API для выполнения команд.</li>
+          <li>Валидация и экранирование пользовательского ввода.</li>
+          <li>Ограничение прав доступа к системным командам.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Примеры Command Injection</h2>
+        <p>1. Просмотр информации о системе:</p>
+        <div>
+          <img src="img/command injection/1.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>2. Просмотр информации о памяти:</p>
+        <div>
+          <img src="img/command injection/2.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>3. Проверка дискового пространства:</p>
+        <div>
+          <img src="img/command injection/3.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>4. Просмотр списка файлов и каталогов:</p>
+        <div>
+          <img src="img/command injection/4.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>5. Запись в файл и создание его:</p>
+        <div>
+          <img src="img/command injection/5.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>6. Просмотр списка файлов после нашего добавления:</p>
+        <div>
+          <img src="img/command injection/6.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>7. Просмотр содержимого файла text:</p>
+        <div>
+          <img src="img/command injection/7.jpg" alt="Пример Command Injection" />
+        </div>
+        <p>8. Удаление файла text:</p>
+        <div>
+          <img src="img/command injection/8.jpg" alt="Пример Command Injection" />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2024 Все права защищены</p>
+    </footer>
+  </body>
+</html>

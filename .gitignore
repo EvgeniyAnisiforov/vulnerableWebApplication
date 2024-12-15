@@ -1,0 +1,26 @@
+# Общие исключения для всех проектов
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.tmp
+*.swp
+*.bak
+*.lock
+
+# Исключения для Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Исключения для frontend
+dist/
+build/
+coverage/
+*.map
+*.cache
+*.next/
+out/
